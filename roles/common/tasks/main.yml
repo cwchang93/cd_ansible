@@ -1,0 +1,17 @@
+# centOS 7.7
+- name: update epel-release
+  yum:
+    name:
+      - epel-release
+      - https://centos7.iuscommunity.org/ius-release.rpm
+
+- name: install common package
+  yum:
+    name:
+      - vim
+      - git2u
+      - zip
+      - unzip
+      - lsof
+      - sshpass
+      - tree
