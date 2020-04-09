@@ -1,0 +1,11 @@
+---
+- hosts: EUTEST
+  roles: 
+    - role: "nginx"
+      become: yes
+  
+  tasks: 
+    - name: say hi
+      debug:
+        msg: "hi"
+    
