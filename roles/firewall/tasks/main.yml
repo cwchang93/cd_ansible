@@ -1,0 +1,7 @@
+- name: install and enable firewalld
+  yum:
+    name: firewalld
+    state: latest
+  notify:
+    - start firewalld
+    - enable firewalld

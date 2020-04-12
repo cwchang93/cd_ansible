@@ -1,0 +1,12 @@
+---
+- hosts: JW
+  roles:
+    - role: common
+      become: yes
+    - role: firewall
+      become: yes
+
+  tasks:
+    - name: say hi
+      debug:
+        msg: "hi"

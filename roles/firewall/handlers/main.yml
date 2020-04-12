@@ -1,0 +1,14 @@
+---
+- name: start firewalld
+  service:
+    name: firewalld
+    state: started
+
+- name: enable firewalld
+  service:
+    name: firewalld
+    enabled: yes
+# - name: restart firewalld
+#   service:
+#     name: nginx
+#     state: restarted
