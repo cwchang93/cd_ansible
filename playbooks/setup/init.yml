@@ -1,9 +1,11 @@
 ---
 - hosts: JW
   roles:
-    - role: common
-      become: yes
-    - role: firewall
+    # - role: common
+    #   become: yes
+    # - role: nginx
+    #   become: yes
+    - role: mariadb
       become: yes
 
   tasks:

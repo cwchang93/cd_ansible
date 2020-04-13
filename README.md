@@ -21,3 +21,20 @@ PLAY RECAP *********************************************************************
   - name: say hello
     debug:
       msg: 'hi, there'
+
+
+<a href="https://blog.csdn.net/Dennis_Wu_/article/details/78631332">為何預設ip打不開？</a>
+
+### Q ansible如何設置防火牆？  allow 80跟443?
+TASK [enable firewalld] **************************************************************************************
+fatal: [70.37.90.116]: FAILED! => {
+    "changed": false
+}
+
+MSG:
+
+Unable to start service firewalld: Job for firewalld.service failed because the control process exited with error code. See "systemctl status firewalld.service" and "journalctl -xe" for details.
+
+
+PLAY RECAP ***************************************************************************************************
+70.37.90.116               : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0

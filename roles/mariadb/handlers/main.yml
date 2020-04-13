@@ -1,0 +1,9 @@
+---
+- name: start mariadb
+  systemd:
+    state: started
+    name: mariadb
+- name: enable mariadb
+  systemd:
+    enable: yes
+    name: mariadb

@@ -1,0 +1,22 @@
+---
+- hosts: JW
+  tasks:
+    - name: say hi
+      debug:
+        msg: "hi"
+    - name: install firewalld and enable
+      yum:
+        name: firewalld
+        state: latest
+      become: yes
+      notify:
+         - enable firewalld
+  # handlers:
+    - name: enable firewalld
+      service: 
+        name: firewalld
+        state: started
+        enabled: yes
+      become: yes
+      # debug:
+      #   msg: 'enabled firewall'
