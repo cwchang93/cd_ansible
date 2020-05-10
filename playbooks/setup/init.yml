@@ -1,12 +1,17 @@
 ---
-- hosts: JW
+- hosts: JWSPEECH
   roles:
-    # - role: common
-    #   become: yes
-    # - role: nginx
-    #   become: yes
-    - role: mariadb
+    - role: common
       become: yes
+    - role: nginx
+      become: yes
+    - role: nodejs
+      become: no
+    - role: firewall
+      become: no
+    # - role: 
+    # - role: mariadb
+    #   become: yes
 
   tasks:
     - name: say hi

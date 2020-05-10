@@ -3,7 +3,7 @@
   yum:
     name:
       - epel-release
-      - https://centos7.iuscommunity.org/ius-release.rpm
+    #   - https://centos7.iuscommunity.org/ius-release.rpm
 
 - name: Upgrade all yum packages ansible, except...
   yum:
@@ -14,7 +14,7 @@
 - name: install common package
   yum:
     name:
-      - git2u
+      - git
       - zip
       - unzip
       - lsof

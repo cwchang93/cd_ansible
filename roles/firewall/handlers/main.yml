@@ -6,10 +6,10 @@
   become: yes
   # debug: 
   #   msg: 'firewalld'
-# - name: enable firewalld
-#   service:
-#     name: firewalld
-#     enabled: yes
+- name: enable firewalld
+  service:
+    name: firewalld
+    enabled: yes
 # - name: restart firewalld
 #   service:
 #     name: nginx
