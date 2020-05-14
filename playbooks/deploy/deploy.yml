@@ -1,7 +1,7 @@
 ---
 - hosts: JWSPEECH
   tasks: 
-    - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+    - name: Execute the command in remote shell
       script: ../../script/deploy.sh
       args:
         executable: /bin/bash

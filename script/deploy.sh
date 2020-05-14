@@ -10,6 +10,4 @@ wait
 
 yarn build
 
-wait 
 
-yarn start 

@@ -1,0 +1,8 @@
+---
+- hosts: JWSPEECH
+  tasks: 
+    - name: copy nginx config 
+      template:
+        src: "../../templates/etc/nginx/nginx.conf"
+        dest: "/etc/nginx/nginx.conf"
+      become: yes
