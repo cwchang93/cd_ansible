@@ -1,40 +1,35 @@
-### nvm 安裝node之後，無法安裝PM2
-TASK [nodejs : Install pm2] ***************************************************************************
-fatal: [51.116.176.22]: FAILED! => {
-    "changed": false
-}
+# Ansible 環境部署腳本
 
-MSG:
+## LionEdu 1-5 : 認識 NextJS 與雲端部署
 
-Failed to find required executable npm in paths: /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin
+## Medium: <a href="https://medium.com/@jinweichang/%E7%B6%B2%E9%A0%81%E9%9B%B2%E7%AB%AF%E9%83%A8%E7%BD%B2-lion%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E5%9B%9E%E9%A1%A7-c8379ad74f33">網頁雲端部署-Lion 教育訓練回顧</a>
 
+### 開發筆記
 
-PLAY RECAP ********************************************************************************************
-51.116.176.22              : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+#### 1. Ansible print
 
-<a href="" >把node裝案全域就能解決</a>
-
-
-
-### console出東西 => debug
-  tasks:
+```yml
+tasks:
   - name: say hello
     debug:
-      msg: 'hi, there'
+    msg: "hi, there"
+```
 
+#### 2. CentOS Nginx 裝好卻無法訪問
 
-<a href="https://blog.csdn.net/Dennis_Wu_/article/details/78631332">為何預設ip打不開？</a>
+原因：CentOS 預設關閉防火牆
+解決方式：開啟防火牆
 
-### Q ansible如何設置防火牆？  allow 80跟443?
-TASK [enable firewalld] **************************************************************************************
-fatal: [70.37.90.116]: FAILED! => {
-    "changed": false
-}
+```yml
+#  2-1. 安裝並開啟firewalld
+$ sudo yum install firewalld
+$ sudo systemctl start firewalld
+$ sudo systemctl enable firewalld
 
-MSG:
+# 2-2. 開防火牆port
+$ sudo firewall-cmd --permanent --add-service=ssh
+# 上方的ssh可改為 http, https
 
-Unable to start service firewalld: Job for firewalld.service failed because the control process exited with error code. See "systemctl status firewalld.service" and "journalctl -xe" for details.
-
-
-PLAY RECAP ***************************************************************************************************
-70.37.90.116               : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+# 查看哪些服務確實有打開
+$ sudo firewall-cmd --permanent --list-all
+```

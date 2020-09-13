@@ -1,0 +1,24 @@
+[WEB]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[API]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[DB]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[MTO]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[MAG]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[ELK]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[SMB]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
+[LOCAL_PORT_FORWARD]
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_ssh_pass="password" ansible_sudo_pass="root_password"
+
